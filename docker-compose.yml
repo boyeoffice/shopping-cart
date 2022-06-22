@@ -16,7 +16,7 @@ services:
       NODE_ENV: development
     user: node
     volumes:
-      - ./:/usr/app
+      - .:/usr/app
     entrypoint: /bin/sh '/usr/app/entrypoint.sh'
     env_file:
      - .env

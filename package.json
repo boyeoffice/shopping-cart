@@ -10,7 +10,13 @@
   "scripts": {
     "dev": "debug=* NODE_PATH=./src ts-node-dev --respawn ./src/index.ts",
     "test": "NODE_PATH=./src mocha --require ts-node/register 'test/**/*.test.ts' --timeout 20000 --exit",
-    "build": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc",
+    "typeorm": "./node_modules/.bin/typeorm",
+    "migrate:help": "./node_modules/.bin/typeorm --help",
+    "migrate:create": "./node_modules/.bin/typeorm migration:create",
+    "migrate:generate": "./node_modules/.bin/typeorm migrate:generare",
+    "migrate": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:run --config ./src/typeorm/config/ormconfig.ts",
+    "migrate:rollback": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:revert --config ./src/typeorm/config/ormconfig.ts"
   },
   "author": "",
   "license": "ISC",
@@ -22,7 +28,7 @@
     "express": "^4.17.3",
     "pg": "^8.7.3",
     "prettier": "^2.5.1",
-    "typeorm": "^0.2.43",
+    "typeorm": "^0.2.45",
     "typescript": "^4.5.5",
     "validatorjs": "^3.22.1"
   },
