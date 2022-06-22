@@ -1,5 +1,8 @@
-run-local:
-	docker-compose up -d
+up:
+	docker-compose up
 
-run-build:
+stop:
+	docker-compose stop
+
+build:
 	docker-compose build
