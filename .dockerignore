@@ -1,0 +1,12 @@
+README.md
+.dockerignore
+.gitingore
+docker-compose.*
+Dokerfile
+node_modules
+.git
+dist
+dbdata
+Makefile
+Procfile
+.env.example

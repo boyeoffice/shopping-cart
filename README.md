@@ -1,21 +1,48 @@
-# Nuxt.js Example
+### Node Docker boilerplate made with Typescript, PostgreSQL
 
-This directory is a brief example of a [Nuxt.js](https://nuxtjs.org) app that can be deployed to ZEIT Now with zero configuration.
+A pretty simplified Docker Compose workflow that sets up a node and postgresql network of containers for local nodejs development.
 
-## How we created this example
+## Usage
 
-To get started with Nuxt.js on Now, you can use the [Create-Nuxt-App CLI](https://www.npmjs.com/package/create-nuxt-app) to initialize the project:
+To get started, make sure you have [Docker installed](https://docs.docker.com/docker-for-mac/install/) on your system, and then clone this repository.
 
-```shell
-$ npx create-nuxt-app my-app
+`$ git clone https://github.com/boyeoffice/node-ts-pg.git`
+
+`$ cd node-ts-pg`
+
+`$ cp .env.example .env`
+
+`$ cp .env.example .env.test`
+
+Spin up the containers
+
+`$ docker-compose up -d --build`
+
+Login to container
+
+`docker-compose exec node bash`
+
+Run test
+
+`$ docker-compose --env-file .env.test up -d --build`
+
+Check for logs
+
+`$ docker-compose logs node`
+
+Stop running containers
+
+`$ docker-compose stop`
+
+## Images
+
+- node:12.20.0
+- postgres:12.3
+
+Install the [Prettier VS Code Extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) here
+
+Open settings in JOSN format, add the following lines to the root of the object.
+
 ```
-
-> The only change made is to amend the output directory in `nuxt.config.js` to `"/public"`.
-
-## Deploying this Example
-
-Once initialized, you can deploy the Nuxt.js example with just a single command:
-
-```shell
-$ now
+// Default (format when you paste) "editor.formatOnPaste": true, // Default (format when you save) "editor.formatOnSave": true,
 ```
