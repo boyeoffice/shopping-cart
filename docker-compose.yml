@@ -11,13 +11,13 @@ services:
       dockerfile: Dockerfile
     container_name: shopping_cart
     ports:
-      - 3080:3080
+      - 5000:5000
     environment:
       NODE_ENV: development
     user: node
     volumes:
       - ./:/usr/app
-    #entrypoint: /bin/sh '/usr/app/entrypoint.sh'
+    entrypoint: /bin/sh '/usr/app/entrypoint.sh'
     env_file:
      - .env
     depends_on:
@@ -31,7 +31,7 @@ services:
       environment:
         POSTGRES_USER: "${DB_USER}"
         POSTGRES_PASSWORD: "${DB_PASSWORD}"
-        POSTGRES_DB: "${DB_NAME}"
+        POSTGRES_DB: "${DB_DATABASE}"
         SERVICE_TAGS: dev
         SERVICE_NAME: pgsql
       ports:
