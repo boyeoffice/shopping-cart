@@ -13,8 +13,8 @@
     "build": "rimraf dist && tsc",
     "typeorm": "./node_modules/.bin/typeorm",
     "migrate:help": "./node_modules/.bin/typeorm --help",
-    "migrate:create": "./node_modules/.bin/typeorm migration:create",
-    "migrate:generate": "./node_modules/.bin/typeorm migrate:generare",
+    "migrate:create": "NODE_PATH=./src ts-node ./node_modules/.bin/typeorm migration:create --config ./src/typeorm/config/ormconfig.ts -n ",
+    "migrate:generate": "./node_modules/.bin/typeorm migrate:generare -n ",
     "migrate": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:run --config ./src/typeorm/config/ormconfig.ts",
     "migrate:rollback": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:revert --config ./src/typeorm/config/ormconfig.ts"
   },
