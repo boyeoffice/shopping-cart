@@ -16,7 +16,10 @@
     "migrate:create": "NODE_PATH=./src ts-node ./node_modules/.bin/typeorm migration:create --config ./src/typeorm/config/ormconfig.ts -n ",
     "migrate:generate": "NODE_PATH=./src ts-node ./node_modules/.bin/typeorm migration:generate --pretty --config ./src/typeorm/config/ormconfig.ts -n ",
     "migrate": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:run --config ./src/typeorm/config/ormconfig.ts",
-    "migrate:rollback": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:revert --config ./src/typeorm/config/ormconfig.ts"
+    "migrate:rollback": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:revert --config ./src/typeorm/config/ormconfig.ts",
+    "seed:run": "NODE_PATH=./src ts-node ./node_modules/.bin/typeorm migration:run --config ./src/typeorm/config/ormconfig-seed.ts",
+    "seed:run:dev": "NODE_PATH=./src ts-node ./node_modules/.bin/typeorm migration:run --config ./src/typeorm/config/ormconfig-seed.ts",
+    "seed:create": "NODE_PATH=./src ts-node ./node_modules/.bin/typeorm migration:create --config ./src/typeorm/config/ormconfig-seed.ts -n "
   },
   "author": "",
   "license": "ISC",
