@@ -14,7 +14,7 @@
     "typeorm": "./node_modules/.bin/typeorm",
     "migrate:help": "./node_modules/.bin/typeorm --help",
     "migrate:create": "NODE_PATH=./src ts-node ./node_modules/.bin/typeorm migration:create --config ./src/typeorm/config/ormconfig.ts -n ",
-    "migrate:generate": "./node_modules/.bin/typeorm migrate:generare -n ",
+    "migrate:generate": "NODE_PATH=./src ts-node ./node_modules/.bin/typeorm migration:generate --pretty --config ./src/typeorm/config/ormconfig.ts -n ",
     "migrate": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:run --config ./src/typeorm/config/ormconfig.ts",
     "migrate:rollback": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:revert --config ./src/typeorm/config/ormconfig.ts"
   },

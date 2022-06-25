@@ -8,20 +8,19 @@ import {
 } from 'typeorm';
 
 export class user1643481453898 implements MigrationInterface {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   public async up(_queryRunner: QueryRunner): Promise<void> {
     await _queryRunner.createTable(
       new Table({
-          name: "users",
+          name: 'users',
           columns: [
               {
-                  name: "id",
-                  type: "int",
+                  name: 'id',
+                  type: 'int',
                   isPrimary: true,
               },
               {
-                  name: "name",
-                  type: "varchar",
+                  name: 'name',
+                  type: 'varchar',
               },
           ],
       }),
@@ -29,8 +28,7 @@ export class user1643481453898 implements MigrationInterface {
     )
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   public async down(_queryRunner: QueryRunner): Promise<void> {
-    await _queryRunner.dropTable("users")
+    await _queryRunner.dropTable('users')
   }
 }
