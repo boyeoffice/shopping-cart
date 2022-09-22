@@ -1,7 +1,7 @@
 version: "3"
 
 networks:
-  shopping-cart:
+  shopping-cart-backend:
     driver: bridge
 
 services:
@@ -9,25 +9,22 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: shopping_cart
+    container_name: shopping_cart_backend
     ports:
       - 5000:5000
     environment:
       NODE_ENV: development
     user: node
     volumes:
-      - .:/usr/app
-    entrypoint: /bin/sh '/usr/app/entrypoint.sh'
-    env_file:
-     - .env
+      - .:/usr/src/app
     depends_on:
       - pgsql
     networks:
-      - shopping-cart
+      - shopping-cart-backend
 
   pgsql:
       image: postgres:12-alpine
-      container_name: cart_db
+      container_name: cart_db_1
       environment:
         POSTGRES_USER: "${DB_USER}"
         POSTGRES_PASSWORD: "${DB_PASSWORD}"
@@ -37,7 +34,7 @@ services:
       ports:
         - "5432:5432"
       networks:
-        - shopping-cart
+        - shopping-cart-backend
 
 volumes:
   dbdata:

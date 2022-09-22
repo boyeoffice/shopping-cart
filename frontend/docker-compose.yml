@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  vue:
+    build:
+      context: ./
+    ports:
+      - '5173:5173'
+    container_name: shopping-cart-frontend
+    environment:
+      - NODE_ENV=development
+    volumes:
+       - .:/usr/src/app
+    #   - /usr/src/app/node_modules
+    user: node
+    command:
+      - npm
+      - run
+      - dev

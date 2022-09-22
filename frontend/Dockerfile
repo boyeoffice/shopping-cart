@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:16-alpine
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -18,8 +18,8 @@ COPY . .
 USER node
 
 # Expose port
-EXPOSE 5000
+EXPOSE 5173
 
 # Build app
 
-CMD ["npm","run","dev"]
+CMD ["npm","run","build"]
