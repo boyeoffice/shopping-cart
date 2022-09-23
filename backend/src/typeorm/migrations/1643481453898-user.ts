@@ -13,15 +13,23 @@ export class user1643481453898 implements MigrationInterface {
       new Table({
           name: 'users',
           columns: [
-              {
-                  name: 'id',
-                  type: 'int',
-                  isPrimary: true,
-              },
-              {
-                  name: 'name',
-                  type: 'varchar',
-              },
+            {
+              name: 'id',
+              type: 'int',
+              isPrimary: true,
+            },
+            {
+              name: 'firstName',
+              type: 'varchar',
+            },
+            {
+              name: 'lastName',
+              type: 'varchar',
+            },
+            {
+              name: 'isActive',
+              type: 'boolean'
+            }
           ],
       }),
       true,
