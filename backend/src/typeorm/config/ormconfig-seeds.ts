@@ -1,4 +1,3 @@
-import { ConnectionOptions } from 'typeorm';
 import { User } from '../entities/user.entity'
 
 import dotenv from 'dotenv';
@@ -16,6 +15,6 @@ export default {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   // These two lines have been added:
-  seeds: ["src/typeorm/seeds/*.ts"],
-  // factories: ["src/db/seeding/factories/**/*{.ts,.js}"],
+  seeds: ['src/typeorm/seeds/*.ts'],
+  factories: ['src/typeorm/factories/*.ts'],
 }

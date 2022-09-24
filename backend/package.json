@@ -17,17 +17,17 @@
     "migrate:generate": "NODE_PATH=./src ts-node ./node_modules/.bin/typeorm migration:generate --pretty --config ./src/typeorm/config/ormconfig.ts -n ",
     "migrate": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:run --config ./src/typeorm/config/ormconfig.ts",
     "migrate:rollback": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:revert --config ./src/typeorm/config/ormconfig.ts",
-    "db:seed": "NODE_PATH=./src ts-node ./node_modules/typeorm-seeding/dist/cli.js seed --configName ./src/typeorm/config/ormconfig-seeds.ts "
+    "db:seed": "NODE_PATH=./src ts-node ./node_modules/typeorm-seeding/dist/cli.js seed --configName ./src/typeorm/config/ormconfig-seeds.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^7.5.0",
     "@types/express": "^4.17.13",
     "@types/node": "^17.0.18",
     "@types/pg": "^8.6.4",
     "dotenv": "^8.6.0",
     "express": "^4.17.3",
-    "faker": "^6.6.6",
     "pg": "^8.7.3",
     "prettier": "^2.5.1",
     "typeorm": "^0.2.45",
@@ -36,7 +36,6 @@
     "validatorjs": "^3.22.1"
   },
   "devDependencies": {
-    "@types/faker": "^6.6.9",
     "@types/mocha": "^9.1.0",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",

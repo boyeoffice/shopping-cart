@@ -10,8 +10,7 @@ export default class AdminSeed implements Seeder {
       .insert()
       .into(User)
       .values([
-        { firstName: 'Timber', lastName: 'Saw', isActive: true },
-        { firstName: 'Phantom', lastName: 'Lancer', isActive: true  },
+        { firstName: 'Admin', lastName: 'Admin', isActive: true },
       ])
       .execute()
   }
