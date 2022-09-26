@@ -17,6 +17,8 @@
     "migrate:generate": "NODE_PATH=./src ts-node ./node_modules/.bin/typeorm migration:generate --pretty --config ./src/typeorm/config/ormconfig.ts -n ",
     "migrate": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:run --config ./src/typeorm/config/ormconfig.ts",
     "migrate:rollback": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js migration:revert --config ./src/typeorm/config/ormconfig.ts",
+    "migrate:drop": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js --config ./src/typeorm/config/ormconfig.ts schema:drop",
+    "migrate:sync": "NODE_PATH=./src ts-node ./node_modules/typeorm/cli.js schema:sync --config ./src/typeorm/config/ormconfig.ts schema:drop",
     "db:seed": "NODE_PATH=./src ts-node ./node_modules/typeorm-seeding/dist/cli.js seed --configName ./src/typeorm/config/ormconfig-seeds.ts"
   },
   "author": "",
